@@ -349,6 +349,25 @@
         fonte.style.fontFamily = fonte.getAttribute('data-fonte');
       });
     });
+    
+    document.getElementById('downloadPDF').addEventListener('click', () => {
+      const pdfContent = 'Conteúdo do PDF aqui'; // Substitua pelo conteúdo que deseja salvar como PDF
+
+      // Cria um blob com o conteúdo do PDF
+      const blob = new Blob([pdfContent], { type: 'application/pdf' });
+
+      // Cria um objeto URL para o blob
+      const url = URL.createObjectURL(blob);
+
+      // Cria um link 'a' temporário para download
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = 'modelos-de-fonte.pdf'; // Nome do arquivo PDF
+      link.click();
+
+      // Limpa o objeto URL depois do download
+      URL.revokeObjectURL(url);
+    });
   </script>
 </body>
 </html>
