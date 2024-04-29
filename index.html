@@ -5,7 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Exemplo de Fontes</title>
 <style>
-header {
+  /* Definições gerais */
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif; /* Fonte de fallback */
+  }
+
+  /* Estilos para o topo com a imagem */
+  header {
     position: relative;
     width: 100%;
     height: 200px; /* Altura da imagem no topo */
@@ -17,11 +25,12 @@ header {
     height: 100%;
     object-fit: cover; /* Manter a proporção da imagem */
   }
- /* Estilos para a caixa de texto e a fonte */
+
+  /* Estilos para a caixa de texto */
   #nomeInput {
     display: block;
     width: 70%; /* Largura da caixa de texto */
-    margin: 0 auto; /* Centralizar horizontalmente */
+    margin: 20px auto; /* Centralizar horizontalmente e adicionar margem superior e inferior */
     padding: 10px; /* Espaçamento interno */
     font-size: 18px; /* Tamanho da fonte */
     text-align: center; /* Alinhamento do texto */
@@ -29,11 +38,15 @@ header {
     border-radius: 5px; /* Borda arredondada */
     box-sizing: border-box; /* Incluir padding e borda na largura */
   }
-.fonte {
+
+  /* Estilo para a descrição da imagem */
+  .descricao-imagem {
     font-size: 36px; /* Tamanho da fonte */
     text-align: center; /* Alinhamento do texto */
     margin-top: 20px; /* Espaço acima do texto */
   }
+
+  /* Estilos para a tabela */
   table {
     width: 100%;
     border-collapse: collapse;
@@ -45,15 +58,17 @@ header {
     text-align: center;
     height: 50px; /* Definindo a altura das células */
   }
-  .fonte {
-    font-size: 24px;
-    margin-bottom: 10px;
-  }
 </style>
 </head>
 <body>
-    <header>
+  <!-- Topo com imagem -->
+  <header>
     <img src="https://i.ibb.co/RpBg4fW/Minimalistic-Creative-Agency-Business-Banner.png" alt="Escolha aqui a fonte para sua personalização">
+  </header>
+
+  <!-- Caixa de texto e resultado -->
+  <input type="text" id="nomeInput" placeholder="Digite seu nome">
+  <div class="descricao-imagem" id="resultado"></div>
   <table>
     <tr>
       <th>Nº</th>
